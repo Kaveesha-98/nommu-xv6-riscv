@@ -4,6 +4,7 @@
         # be placed at 0x80000000.
 .section .text
 .global _entry
+.option norvc
 _entry:
         # set up a stack for C.
         # stack0 is declared in start.c,

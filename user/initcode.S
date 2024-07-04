@@ -2,6 +2,7 @@
 # This code runs in user space.
 
 #include "syscall.h"
+.option norvc
 
 # exec(init, argv)
 .globl start
