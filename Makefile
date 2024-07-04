@@ -171,3 +171,8 @@ qemu-gdb: $K/kernel .gdbinit fs.img
 	@echo "*** Now run 'gdb' in another window." 1>&2
 	$(QEMU) $(QEMUOPTS) -S $(QEMUGDB)
 
+mini-rv64ima: $K/kernel fs.img
+	$(OBJCOPY) -O binary kernel/kernel Image
+	cp Image mini-rv64ima/mini-rv32ima/DownloadedImage
+	make -C mini-rv64ima testdlimage
+
